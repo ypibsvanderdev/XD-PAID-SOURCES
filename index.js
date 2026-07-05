@@ -43,6 +43,7 @@ const copyCodeText = document.getElementById('copy-code-text');
 const downloadLinkBox = document.getElementById('download-link-box');
 const downloadLinkDescr = document.getElementById('download-link-descr');
 const btnModalDownload = document.getElementById('btn-modal-download');
+const btnSearchWeb = document.getElementById('btn-search-web');
 const btnCopyUrl = document.getElementById('btn-copy-url');
 
 // Toast Notification
@@ -390,6 +391,9 @@ function openModal(id) {
   const item = allSources.find(s => s.id === id);
   if (!item) return;
   
+  // Hide search button by default
+  btnSearchWeb.style.display = 'none';
+  
   // Types badge and tags
   let typeName = "Code block";
   if (item.type === 'attachment') typeName = "Attachment file";
@@ -434,6 +438,10 @@ function openModal(id) {
     } else {
       downloadLinkDescr.textContent = `External website paste link. URL: ${item.url}`;
     }
+    
+    // Configure search web button
+    btnSearchWeb.style.display = 'inline-block';
+    btnSearchWeb.href = 'https://www.google.com/search?q=' + encodeURIComponent(item.title + ' roblox script');
     
     // Handle relative vs absolute links
     let finalUrl = item.url;
