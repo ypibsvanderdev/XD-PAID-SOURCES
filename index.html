@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XD Hub Paid Sources | Search 6,593+ Leaked Exploit Sources</title>
+  <meta name="description" content="XD Hub Paid Sources is a premium, high-fidelity searchable archive of 6,593+ paid Roblox script sources, bypasses, lagger codes, and desync systems, extracted from top developer community leaks.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  
+  <!-- Preconnect and Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+
+  <!-- Background Decorative Grid and Ambient Lights -->
+  <div class="ambient-grid"></div>
+  <div class="ambient-light shadow-top"></div>
+  <div class="ambient-light shadow-bottom"></div>
+
+  <!-- App Wrapper -->
+  <div class="app-container">
+    
+    <!-- Main Header -->
+    <header class="main-header">
+      <div class="brand">
+        <div class="logo-box">
+          <span class="logo-icon">XD</span>
+        </div>
+        <div class="brand-text">
+          <h1>XD HUB SOURCES</h1>
+          <p class="subtitle">Premium Script Leaks Database</p>
+        </div>
+      </div>
+      
+      <div class="stats-counter" id="stats-counter-id">
+        <span class="counter-num" id="total-count-display">6,593</span>
+        <span class="counter-label">Index Files</span>
+      </div>
+    </header>
+
+    <!-- Main Layout -->
+    <main class="main-layout">
+      
+      <!-- Sidebar Filters Section -->
+      <aside class="sidebar-filters" id="sidebar-filters-id">
+        <div class="filter-section-title">
+          <h2>SEARCH & FILTER</h2>
+          <button type="button" class="btn-text" id="btn-reset-filters">Reset All</button>
+        </div>
+
+        <!-- Search Form -->
+        <div class="filter-group">
+          <label for="search-input" class="label-title">Fuzzy Search</label>
+          <div class="search-box-wrapper">
+            <span class="search-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </span>
+            <input type="text" id="search-input" placeholder="Search title, code, author..." autocomplete="off">
+            <button type="button" class="clear-search-btn" id="btn-clear-search" style="display: none;">&times;</button>
+          </div>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="filter-group">
+          <span class="label-title">Source Channels</span>
+          <div class="checkbox-group" id="filter-channels-container">
+            <!-- Dynamically populated, fallback hardcoded for SEO/initial load -->
+            <label class="checkbox-label">
+              <input type="checkbox" name="channel" value="Elite Hub Paid Sources">
+              <span class="checkbox-custom"></span>
+              <span class="checkbox-text">Elite Hub</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="channel" value="Mega's Community Paid Sources">
+              <span class="checkbox-custom"></span>
+              <span class="checkbox-text">Mega's Community</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="channel" value="Cypher Sources New">
+              <span class="checkbox-custom"></span>
+              <span class="checkbox-text">Cypher Sources</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="channel" value="Azure Hub Untest Premium">
+              <span class="checkbox-custom"></span>
+              <span class="checkbox-text">Azure Hub</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="channel" value="Leaked By Qrypt Parrot Sources">
+              <span class="checkbox-custom"></span>
+              <span class="checkbox-text">Qrypt Parrot</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Type Filter -->
+        <div class="filter-group">
+          <span class="label-title">Source Type</span>
+          <div class="checkbox-group" id="filter-types-container">
+            <label class="checkbox-label">
+              <input type="checkbox" name="type" value="code_block">
+              <span class="checkbox-custom"></span>
+              <span class="checkbox-text">Code Snippets</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="type" value="attachment">
+              <span class="checkbox-custom"></span>
+              <span class="checkbox-text">Discord Attachments</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="type" value="external_link">
+              <span class="checkbox-custom"></span>
+              <span class="checkbox-text">Pastebin / Github Links</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Preset Exploit Tags -->
+        <div class="filter-group">
+          <span class="label-title">Popular Keywords</span>
+          <div class="tags-cloud" id="preset-tags-container">
+            <button type="button" class="preset-tag" data-tag="lagger">Lagger</button>
+            <button type="button" class="preset-tag" data-tag="desync">Desync</button>
+            <button type="button" class="preset-tag" data-tag="grab">Grab</button>
+            <button type="button" class="preset-tag" data-tag="tp">Teleport</button>
+            <button type="button" class="preset-tag" data-tag="gui">GUI</button>
+            <button type="button" class="preset-tag" data-tag="deobf">Deobfuscated</button>
+            <button type="button" class="preset-tag" data-tag="aimbot">Aimbot</button>
+            <button type="button" class="preset-tag" data-tag="esp">ESP</button>
+          </div>
+        </div>
+
+        <!-- Footer Note -->
+        <div class="filter-note">
+          <p>Created by <strong>ypibsvanderdev</strong>. Theme inspired by monochrome futuristic dashboards.</p>
+        </div>
+      </aside>
+
+      <!-- Content Area -->
+      <section class="content-panel" id="content-panel-id">
+        
+        <!-- Search Info Banner -->
+        <div class="search-summary-bar">
+          <div class="summary-text" id="search-summary-text">
+            Loading database files...
+          </div>
+          <div class="sorting-controls">
+            <label for="sort-select" class="sr-only">Sort by:</label>
+            <select id="sort-select" class="styled-select">
+              <option value="newest">Newest First</option>
+              <option value="oldest">Oldest First</option>
+              <option value="name-asc">Name (A-Z)</option>
+              <option value="name-desc">Name (Z-A)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="sources-grid" id="sources-grid-container">
+          <!-- Dynamically generated card items -->
+          <!-- Skeleton Loading States -->
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+        </div>
+
+        <!-- Load More / Pagination Area -->
+        <div class="pagination-area" id="pagination-container">
+          <button type="button" class="btn-primary" id="btn-load-more" style="display: none;">
+            <span>Load More Sources</span>
+            <span class="btn-loader" id="load-more-loader" style="display: none;"></span>
+          </button>
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Detail/Viewer Modal Dialog -->
+  <div class="modal-backdrop" id="details-modal" aria-hidden="true" role="dialog">
+    <div class="modal-container">
+      
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="modal-header-brand">
+          <span class="modal-badge" id="modal-type-badge">Code Block</span>
+          <h3 id="modal-script-title">onyx_hub_auto_play.lua</h3>
+        </div>
+        <button type="button" class="modal-close-btn" id="btn-close-modal" aria-label="Close modal">&times;</button>
+      </div>
+
+      <!-- Modal Meta Details -->
+      <div class="modal-meta-grid">
+        <div class="meta-item">
+          <span class="meta-label">Source Channel</span>
+          <span class="meta-val" id="modal-meta-source">Elite Hub</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Author / Leaker</span>
+          <span class="meta-val" id="modal-meta-author">@Elite</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Posted On</span>
+          <span class="meta-val" id="modal-meta-date">2026-06-05 00:07</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Estimated Size</span>
+          <span class="meta-val" id="modal-meta-size">23.78 KB</span>
+        </div>
+      </div>
+
+      <!-- Modal Body Content -->
+      <div class="modal-body">
+        
+        <!-- Script Content / Code Editor Window -->
+        <div class="code-editor-window" id="code-viewer-container">
+          <div class="editor-header">
+            <div class="editor-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="editor-filename" id="editor-title">script_source.lua</div>
+            <button type="button" class="btn-copy-code" id="btn-copy-code">
+              <span class="btn-copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                </svg>
+              </span>
+              <span id="copy-code-text">Copy Script</span>
+            </button>
+          </div>
+          <div class="editor-scroller">
+            <pre class="code-display" id="modal-code-display"><code>-- Code will display here</code></pre>
+          </div>
+        </div>
+
+        <!-- URL / Direct Download Link (if attachment or external) -->
+        <div class="download-link-box" id="download-link-box" style="display: none;">
+          <div class="box-text">
+            <h4>Original Script Link</h4>
+            <p id="download-link-descr">This script is hosted on an external server.</p>
+          </div>
+          <div class="box-actions">
+            <a href="#" target="_blank" class="btn-primary" id="btn-modal-download">
+              <span>Go to Source URL</span>
+              <span class="link-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </span>
+            </a>
+            <button type="button" class="btn-secondary" id="btn-copy-url">
+              <span>Copy Link</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Toast Notification System -->
+  <div class="toast-notification" id="toast-notify" role="alert" aria-live="polite">
+    <div class="toast-body">
+      <span class="toast-icon">✓</span>
+      <span class="toast-message" id="toast-message-text">Copied to clipboard!</span>
+    </div>
+  </div>
+
+  <!-- Script Files -->
+  <script type="module" src="/index.js"></script>
+</body>
+</html>
