@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Fetch Database
 async function fetchSources() {
   try {
-    const response = await fetch('/sources.json');
+    const response = await fetch('sources.json');
     if (!response.ok) throw new Error('Database response error');
     
     allSources = await response.json();
