@@ -59,10 +59,17 @@ document.addEventListener('DOMContentLoaded', () => {
 // Fetch Database
 async function fetchSources() {
   try {
-    const response = await fetch('sources.json?t=' + Date.now());
-    if (!response.ok) throw new Error('Database response error');
+    const [response1, response2] = await Promise.all([
+      fetch('sources_part1.json?t=' + Date.now()),
+      fetch('sources_part2.json?t=' + Date.now())
+    ]);
     
-    allSources = await response.json();
+    if (!response1.ok || !response2.ok) throw new Error('Database response error');
+    
+    const part1 = await response1.json();
+    const part2 = await response2.json();
+    
+    allSources = [...part1, ...part2];
     filteredSources = [...allSources];
     
     // Update total count
