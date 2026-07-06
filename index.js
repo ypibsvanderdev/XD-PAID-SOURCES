@@ -170,9 +170,6 @@ function setupEventListeners() {
     const card = e.target.closest('.source-card');
     if (!card) return;
     
-    // Prevent opening modal if clicking the download/copy buttons directly on card
-    if (e.target.closest('.btn-card-action')) return;
-    
     const sourceId = card.dataset.id;
     openModal(sourceId);
   });
@@ -191,12 +188,10 @@ function setupEventListeners() {
   });
   
   // Copy to clipboard handlers inside Modal
-  let activeScriptContent = '';
-  let activeScriptUrl = '';
-  
   btnCopyCode.addEventListener('click', () => {
-    if (!activeScriptContent) return;
-    navigator.clipboard.writeText(activeScriptContent)
+    const content = btnCopyCode.clickEventValue;
+    if (!content) return;
+    navigator.clipboard.writeText(content)
       .then(() => {
         copyCodeText.textContent = 'Copied!';
         btnCopyCode.style.backgroundColor = '#ffffff';
@@ -215,8 +210,10 @@ function setupEventListeners() {
   });
   
   btnCopyUrl.addEventListener('click', () => {
-    if (!activeScriptUrl) return;
-    navigator.clipboard.writeText(activeScriptUrl)
+    const url = btnCopyUrl.clickEventValue;
+    if (!url) return;
+    const absoluteUrl = new URL(url, window.location.href).href;
+    navigator.clipboard.writeText(absoluteUrl)
       .then(() => {
         btnCopyUrl.textContent = 'Copied!';
         showToast('Link copied to clipboard!');
@@ -452,11 +449,8 @@ function openModal(id) {
     
     // Handle relative vs absolute links
     let finalUrl = item.url;
-    // If it's a relative link matching local exports folder
     if (item.url.includes('_Files/')) {
-      // It points to a relative folder. We display it but add a warning or handle as local download.
-      btnModalDownload.href = `file:///C:/Users/meqda/OneDrive/Documents/${item.url.replace(/%20/g, ' ')}`;
-      downloadLinkDescr.textContent = `This attachment is a local file export. Expected path: Documents/${decodeURIComponent(item.url)}`;
+      btnModalDownload.href = new URL(item.url, window.location.href).href;
     } else {
       btnModalDownload.href = item.url;
     }
